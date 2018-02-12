@@ -1,27 +1,22 @@
 import { Component } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { User } from './models/user';
 import 'rxjs/Rx';
+import { AlertQueueComponent } from './components/alert-queue/alert-queue.component';
+import { AlertService } from './components/alert-queue/service/alert.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers:[
+    AlertService
+  ]
 })
 export class AppComponent {
-  user:User;
-  me:number;
+  constructor(){
+  }
 
-  constructor(private http:HttpClient){
-    this.user= new User();
-
-    // let params = new HttpParams();
-    // params.set('name', '1');
-
-    this.http.get<User>('/api/users/1')
-    .subscribe(user => this.user = user)
-
-    this.http.get<number>('/api/users/test/1')
-    .subscribe(name => this.me = name)
+  ngOnInit(){
+    
   }
 }

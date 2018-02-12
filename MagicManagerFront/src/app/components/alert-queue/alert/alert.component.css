@@ -1,0 +1,12 @@
+.block{
+    margin: 5px;
+    display: block;
+    width: 100%;
+
+    cursor:pointer;
+}
+
+.alert{
+    margin-bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,15 @@
+<form (submit)="register($event)">
+  <div class="form-group">
+    <label for="login-id">Adresse email</label>
+    <input type="email" class="form-control" id="login-id" placeholder="Adresse email" required>
+  </div>
+  <div class="form-group">
+    <label for="login-pass">Mot de passe</label>
+    <input type="password" class="form-control" id="login-pass" placeholder="Mot de passe" required>
+  </div>
+  <div class="form-group">
+      <label for="login-pass-confirm">Confirmation</label>
+      <input type="password" class="form-control" id="login-pass-confirm" placeholder="Confirmez le mot de passe" required>
+    </div>
+    <button type="submit" class="btn btn-primary">S'enregistrer</button>
+  </form>

@@ -1,0 +1,5 @@
+<div class="float-right">
+  <div *ngFor="let alert of alerts">
+    <app-alert *ngIf="alert.visible" [ngClass]="getAnimationClass(alert)" [model]="alert"></app-alert>
+  </div>
+</div>

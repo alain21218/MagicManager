@@ -2,14 +2,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>fr.asoumagne</groupId>
-	<artifactId>TemplateRestApp</artifactId>
+	<artifactId>MagicManagerBack</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>TemplateRestApp Maven Webapp</name>
+	<name>MagicManagerBack Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	
+	<properties>
+		<hibernate.version>5.2.12</hibernate.version>
+		<mysql.version>6.0.6</mysql.version>	
+	</properties>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-server</artifactId>
@@ -27,10 +31,43 @@
 		    <artifactId>asm</artifactId>
 		    <version>3.3.1</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>5.2.12.Final</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-entitymanager</artifactId>
+		    <version>5.2.12.Final</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>6.0.6</version>
+		</dependency>
+		
 
 	</dependencies>
 
 	<build>
-		<finalName>TemplateRestApp</finalName>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.4</version>
+					<configuration>
+						<warSourceDirectory>src/main/webapp</warSourceDirectory>
+						<warName>MagicManagerBack</warName>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<finalName>MagicManagerBack</finalName>
 	</build>
 </project>
